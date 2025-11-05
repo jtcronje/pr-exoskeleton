@@ -67,14 +67,20 @@ npm install
 yarn install
 ```
 
-3. **Start the development server**
+3. **Check system requirements (optional, recommended on macOS)**
+```bash
+npm run check-system
+```
+This will verify file descriptor limits and warn if adjustments are needed.
+
+4. **Start the development server**
 ```bash
 npm start
 # or
 expo start
 ```
 
-4. **Run on specific platform**
+5. **Run on specific platform**
 ```bash
 npm run android  # For Android
 npm run ios      # For iOS
@@ -427,6 +433,26 @@ eas build --platform ios
 - Solution: Check console for errors
 - Verify page configuration in pages.config.json
 - Ensure graph type matches available components
+
+**Problem: EMFILE: too many open files (macOS)**
+- Symptom: Error `EMFILE: too many open files, watch` when running `npm start`
+- Cause: macOS file descriptor limit is too low for Metro bundler's file watcher
+- Solution: Check your system first with `npm run check-system`, then increase the file descriptor limit using one of these methods:
+
+  **Temporary fix (current terminal session):**
+  ```bash
+  ulimit -n 4096
+  npm start
+  ```
+
+  **Permanent fix (add to ~/.zshrc or ~/.bash_profile):**
+  ```bash
+  ulimit -n 4096
+  ```
+  Then restart your terminal or run `source ~/.zshrc`
+
+  **System-wide fix (requires admin):**
+  Create `/Library/LaunchDaemons/limit.maxfiles.plist` with appropriate limits (recommended for shared development machines)
 
 ## 📖 Additional Documentation
 
