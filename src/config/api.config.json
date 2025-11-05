@@ -1,0 +1,30 @@
+{
+  "cubeJs": {
+    "enabled": false,
+    "apiUrl": "",
+    "apiToken": "",
+    "defaultCacheTTL": 300,
+    "pollInterval": 60000,
+    "retryConfig": {
+      "maxRetries": 3,
+      "retryDelay": 1000,
+      "retryDelayMultiplier": 2
+    }
+  },
+  "clients": {
+    "default": {
+      "id": "default",
+      "name": "Default Client",
+      "cubeJs": {
+        "apiUrl": "https://api.example.com/cubejs-api/v1",
+        "apiToken": "YOUR_API_TOKEN_HERE"
+      },
+      "theme": {
+        "primary": "#1E3A8A",
+        "secondary": "#3B82F6",
+        "accent": "#60A5FA"
+      }
+    }
+  },
+  "activeClient": "default"
+}

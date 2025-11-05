@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "Dashboard Skeleton",
+    "slug": "dashboard-skeleton",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1E3A8A"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dashboard.skeleton"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1E3A8A"
+      },
+      "package": "com.dashboard.skeleton"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "filters": [
+    {
+      "id": "dateRange",
+      "name": "Date Range",
+      "type": "dateRange",
+      "defaultValue": {
+        "start": "2024-01-01",
+        "end": "2024-12-31"
+      },
+      "config": {
+        "allowCustomRange": true,
+        "presets": [
+          { "label": "Last 7 Days", "days": 7 },
+          { "label": "Last 30 Days", "days": 30 },
+          { "label": "Last 90 Days", "days": 90 },
+          { "label": "Year to Date", "value": "ytd" },
+          { "label": "Last Year", "value": "lastYear" }
+        ]
+      },
+      "cubeJsMapping": {
+        "dimension": "date",
+        "operator": "inDateRange"
+      }
+    },
+    {
+      "id": "region",
+      "name": "Region",
+      "type": "multiSelect",
+      "defaultValue": [],
+      "options": [
+        { "value": "north-america", "label": "North America" },
+        { "value": "europe", "label": "Europe" },
+        { "value": "asia-pacific", "label": "Asia Pacific" },
+        { "value": "latin-america", "label": "Latin America" },
+        { "value": "middle-east", "label": "Middle East" },
+        { "value": "africa", "label": "Africa" }
+      ],
+      "config": {
+        "searchable": true,
+        "selectAll": true
+      },
+      "cubeJsMapping": {
+        "dimension": "region",
+        "operator": "equals"
+      }
+    },
+    {
+      "id": "category",
+      "name": "Category",
+      "type": "multiSelect",
+      "defaultValue": [],
+      "options": [
+        { "value": "electronics", "label": "Electronics" },
+        { "value": "clothing", "label": "Clothing" },
+        { "value": "food", "label": "Food & Beverage" },
+        { "value": "home", "label": "Home & Garden" },
+        { "value": "sports", "label": "Sports & Outdoors" },
+        { "value": "books", "label": "Books & Media" }
+      ],
+      "config": {
+        "searchable": true,
+        "selectAll": true
+      },
+      "cubeJsMapping": {
+        "dimension": "category",
+        "operator": "equals"
+      }
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "type": "singleSelect",
+      "defaultValue": "all",
+      "options": [
+        { "value": "all", "label": "All Status" },
+        { "value": "active", "label": "Active" },
+        { "value": "pending", "label": "Pending" },
+        { "value": "completed", "label": "Completed" },
+        { "value": "cancelled", "label": "Cancelled" }
+      ],
+      "cubeJsMapping": {
+        "dimension": "status",
+        "operator": "equals"
+      }
+    },
+    {
+      "id": "metric",
+      "name": "Metric Type",
+      "type": "singleSelect",
+      "defaultValue": "revenue",
+      "options": [
+        { "value": "revenue", "label": "Revenue" },
+        { "value": "orders", "label": "Orders" },
+        { "value": "customers", "label": "Customers" },
+        { "value": "growth", "label": "Growth Rate" }
+      ],
+      "cubeJsMapping": {
+        "measure": "metric",
+        "operator": "set"
+      }
+    },
+    {
+      "id": "minValue",
+      "name": "Minimum Value",
+      "type": "number",
+      "defaultValue": 0,
+      "config": {
+        "min": 0,
+        "max": 1000000,
+        "step": 100
+      },
+      "cubeJsMapping": {
+        "dimension": "value",
+        "operator": "gte"
+      }
+    }
+  ],
+  "filterGroups": [
+    {
+      "id": "time",
+      "name": "Time Filters",
+      "filters": ["dateRange"]
+    },
+    {
+      "id": "location",
+      "name": "Location Filters",
+      "filters": ["region"]
+    },
+    {
+      "id": "business",
+      "name": "Business Filters",
+      "filters": ["category", "status", "metric"]
+    },
+    {
+      "id": "advanced",
+      "name": "Advanced Filters",
+      "filters": ["minValue"]
+    }
+  ]
+}

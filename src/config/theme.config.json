@@ -1,0 +1,88 @@
+{
+  "colors": {
+    "primary": {
+      "main": "#1E3A8A",
+      "light": "#3B82F6",
+      "lighter": "#60A5FA",
+      "dark": "#1E40AF",
+      "darker": "#1E3A8A"
+    },
+    "secondary": {
+      "main": "#374151",
+      "light": "#6B7280",
+      "lighter": "#9CA3AF",
+      "dark": "#1F2937",
+      "darker": "#111827"
+    },
+    "background": {
+      "default": "#F9FAFB",
+      "paper": "#FFFFFF",
+      "sidebar": "#1F2937",
+      "sidebarHover": "#374151",
+      "card": "#FFFFFF"
+    },
+    "text": {
+      "primary": "#111827",
+      "secondary": "#6B7280",
+      "disabled": "#9CA3AF",
+      "white": "#FFFFFF"
+    },
+    "border": {
+      "main": "#E5E7EB",
+      "light": "#F3F4F6",
+      "dark": "#D1D5DB"
+    },
+    "success": "#10B981",
+    "warning": "#F59E0B",
+    "error": "#EF4444",
+    "info": "#3B82F6"
+  },
+  "typography": {
+    "fontFamily": "System",
+    "fontSize": {
+      "xs": 12,
+      "sm": 14,
+      "base": 16,
+      "lg": 18,
+      "xl": 20,
+      "2xl": 24,
+      "3xl": 30,
+      "4xl": 36
+    },
+    "fontWeight": {
+      "regular": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700"
+    }
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "2xl": 48
+  },
+  "borderRadius": {
+    "sm": 4,
+    "md": 8,
+    "lg": 12,
+    "xl": 16
+  },
+  "shadows": {
+    "sm": "0px 1px 2px rgba(0, 0, 0, 0.05)",
+    "md": "0px 4px 6px rgba(0, 0, 0, 0.1)",
+    "lg": "0px 10px 15px rgba(0, 0, 0, 0.1)",
+    "xl": "0px 20px 25px rgba(0, 0, 0, 0.15)"
+  },
+  "sidebar": {
+    "width": {
+      "expanded": 240,
+      "collapsed": 64
+    }
+  },
+  "filterPane": {
+    "width": 280
+  }
+}
